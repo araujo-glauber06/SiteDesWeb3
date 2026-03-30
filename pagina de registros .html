@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBeX - Cadastrar Projeto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #0f172a, #581c87, #0f172a);
+            min-height: 100vh;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #4b5563;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #9333ea;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="border-b border-white/10 bg-black/20 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span class="font-semibold text-white text-xl">GBeX</span>
+                </div>
+                
+                <div class="flex gap-1">
+                    <a href="index.html" class="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-300 hover:bg-white/10 hover:text-white transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        <span class="hidden sm:inline">Início</span>
+                    </a>
+                    
+                    <a href="register.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-600 text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                        </svg>
+                        <span class="hidden sm:inline">Cadastrar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header -->
+        <div class="mb-8">
+            <a href="index.html" class="inline-flex items-center gap-2 text-gray-300 hover:text-white mb-4 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Voltar
+            </a>
+            
+            <h1 class="text-4xl font-bold text-white mb-2">Cadastrar Novo Projeto</h1>
+            <p class="text-gray-300">Adicione um novo projeto ao GBeX</p>
+        </div>
+
+        <form id="projectForm" class="space-y-6">
+            <!-- Basic Info Card -->
+            <div class="card rounded-lg p-6">
+                <h2 class="text-white text-xl font-semibold mb-2">Informações Básicas</h2>
+                <p class="text-gray-400 mb-4">Detalhes principais do seu projeto</p>
+                
+                <div class="space-y-4">
+                    <div class="space-y-2">
+                        <label for="title" class="block text-white">Título do Projeto *</label>
+                        <input 
+                            type="text" 
+                            id="title" 
+                            name="title" 
+                            required
+                            class="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/20 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            placeholder="">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="description" class="block text-white">Descrição Curta *</label>
+                        <input 
+                            type="text" 
+                            id="description" 
+                            name="description" 
+                            required
+                            class="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/20 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            placeholder="">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="fullDescription" class="block text-white">Descrição Completa</label>
+                        <textarea 
+                            id="fullDescription" 
+                            name="fullDescription" 
+                            rows="4"
+                            class="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/20 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            placeholder=""></textarea>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="category" class="block text-white">Categoria *</label>
+                        <select 
+                            id="category" 
+                            name="category" 
+                            required
+                            class="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <option value="" class="bg-slate-900">Selecione uma categoria</option>
+                            <option value="UI/UX Design" class="bg-slate-900">UI/UX Design</option>
+                            <option value="Web Development" class="bg-slate-900">Web Development</option>
+                            <option value="Mobile" class="bg-slate-900">Mobile</option>
+                            <option value="Branding" class="bg-slate-900">Branding</option>
+                            <option value="Ilustração" class="bg-slate-900">Ilustração</option>
+                            <option value="Fotografia" class="bg-slate-900">Fotografia</option>
+                            <option value="Outro" class="bg-slate-900">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="tags" class="block text-white">Tags</label>
+                        <input 
+                            type="text" 
+                            id="tags" 
+                            name="tags"
+                            class="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/20 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            placeholder="">
+                        <p class="text-sm text-gray-400">Separe as tags com vírgulas</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Card -->
+            <div class="card rounded-lg p-6">
+                <h2 class="text-white text-xl font-semibold mb-2">Privacidade</h2>
+                <p class="text-gray-400 mb-4">Controle quem pode ver este projeto</p>
+                
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                        <div>
+                            <p class="text-white font-medium">Projeto Privado</p>
+                            <p class="text-sm text-gray-400">Apenas você terá acesso a este projeto</p>
+                        </div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="isPrivate" name="isPrivate" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Image Upload Card -->
+            <div class="card rounded-lg p-6">
+                <h2 class="text-white text-xl font-semibold mb-2">Imagem Principal</h2>
+                <p class="text-gray-400 mb-4">Adicione uma imagem de capa para o projeto</p>
+                
+                <div class="border-2 border-dashed border-white/20 rounded-lg p-8 text-center hover:border-purple-500/50 transition-colors">
+                    <input type="file" id="imageUpload" accept="image/*" class="hidden" onchange="updateImageLabel(this)">
+                    <label for="imageUpload" class="cursor-pointer flex flex-col items-center gap-2">
+                        <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <p class="text-white" id="imageLabel">Clique para selecionar uma imagem</p>
+                        <p class="text-sm text-gray-400">PNG, JPG ou GIF (max. 10MB)</p>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Files Upload Card -->
+            <div class="card rounded-lg p-6">
+                <h2 class="text-white text-xl font-semibold mb-2">Arquivos do Projeto</h2>
+                <p class="text-gray-400 mb-4">Adicione documentos, designs e outros arquivos</p>
+                
+                <div class="border-2 border-dashed border-white/20 rounded-lg p-8 text-center hover:border-purple-500/50 transition-colors">
+                    <input type="file" id="filesUpload" multiple class="hidden" onchange="updateFilesLabel(this)">
+                    <label for="filesUpload" class="cursor-pointer flex flex-col items-center gap-2">
+                        <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                        </svg>
+                        <p class="text-white" id="filesLabel">Clique para selecionar arquivos</p>
+                        <p class="text-sm text-gray-400">Qualquer tipo de arquivo (max. 50MB cada)</p>
+                    </label>
+                </div>
+
+                <div id="filesList" class="mt-4 space-y-2 hidden"></div>
+            </div>
+
+            <!-- Submit Buttons -->
+            <div class="flex gap-4 justify-end">
+                <a href="index.html" class="border border-white/20 text-white hover:bg-white/10 px-6 py-2 rounded-lg transition-colors">
+                    Cancelar
+                </a>
+                <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition-colors">
+                    Cadastrar Projeto
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-black/20 backdrop-blur-lg mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <p class="text-center text-gray-400 text-sm">
+                © 2026 GBeX. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function updateImageLabel(input) {
+            const label = document.getElementById('imageLabel');
+            if (input.files && input.files[0]) {
+                label.textContent = input.files[0].name;
+            } else {
+                label.textContent = 'Clique para selecionar uma imagem';
+            }
+        }
+
+        function updateFilesLabel(input) {
+            const label = document.getElementById('filesLabel');
+            const filesList = document.getElementById('filesList');
+            
+            if (input.files && input.files.length > 0) {
+                label.textContent = `${input.files.length} arquivo(s) selecionado(s)`;
+                
+                // Show files list
+                filesList.classList.remove('hidden');
+                filesList.innerHTML = '<p class="text-white mb-2">Arquivos Selecionados:</p>';
+                
+                Array.from(input.files).forEach(file => {
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'flex items-center justify-between p-3 bg-white/5 rounded-lg';
+                    fileItem.innerHTML = `
+                        <span class="text-gray-300 text-sm">${file.name}</span>
+                        <span class="bg-purple-500/20 text-purple-300 rounded-full px-3 py-1 text-sm">
+                            ${(file.size / 1024).toFixed(1)} KB
+                        </span>
+                    `;
+                    filesList.appendChild(fileItem);
+                });
+            } else {
+                label.textContent = 'Clique para selecionar arquivos';
+                filesList.classList.add('hidden');
+            }
+        }
+
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {
+                title: formData.get('title'),
+                description: formData.get('description'),
+                fullDescription: formData.get('fullDescription'),
+                category: formData.get('category'),
+                tags: formData.get('tags'),
+                isPrivate: document.getElementById('isPrivate').checked
+            };
+            
+            console.log('Dados do projeto:', data);
+            alert('Projeto cadastrado com sucesso!');
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
