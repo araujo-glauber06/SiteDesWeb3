@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBeX - Página Inicial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="border-b border-white/10 bg-black/20 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span class="font-semibold text-white text-xl">GBeX</span>
+                </div>
+                <div class="flex gap-1">
+                    <a href="index.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-600 text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        <span class="hidden sm:inline">Início</span>
+                    </a>
+                    <a href="register.html" class="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-300 hover:bg-white/10 hover:text-white transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                        </svg>
+                        <span class="hidden sm:inline">Cadastrar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 bg-purple-500/20 border border-purple-500/30 rounded-full px-4 py-2 mb-6">
+                <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+                <span class="text-sm text-purple-300">Portfólio Privado</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                <span class="text-purple-400">GBeX</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+                Um espaço seguro para armazenar e organizar seus projetos pessoais,
+                fotos e arquivos importantes.
+            </p>
+            <a href="register.html" class="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                Adicionar Novo Projeto
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="card rounded-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-white font-semibold">Total de Projetos</h3>
+                    <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                    </svg>
+                </div>
+                <p class="text-4xl font-bold text-white">3</p>
+                <p class="text-sm text-gray-400 mt-2">Projetos armazenados</p>
+            </div>
+            <div class="card rounded-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-white font-semibold">Privados</h3>
+                    <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                </div>
+                <p class="text-4xl font-bold text-white">2</p>
+                <p class="text-sm text-gray-400 mt-2">Com acesso restrito</p>
+            </div>
+            <div class="card rounded-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-white font-semibold">Arquivos</h3>
+                    <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <p class="text-4xl font-bold text-white">24</p>
+                <p class="text-sm text-gray-400 mt-2">Fotos e documentos</p>
+            </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-white mb-2">Meus Projetos</h2>
+            <p class="text-gray-400">Explore sua coleção de projetos pessoais</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="project-details.html?id=1" class="block">
+                <div class="card rounded-lg overflow-hidden cursor-pointer h-full">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1693159682660-c125e71844d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Design System Moderno" class="w-full h-full object-cover">
+                        <div class="absolute top-3 right-3 bg-purple-600/90 backdrop-blur-sm rounded-full p-2">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-white text-lg font-semibold mb-2">Design System Moderno</h3>
+                        <p class="text-gray-400 mb-4">Sistema completo de componentes reutilizáveis para aplicações web</p>
+                        <span class="inline-block bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full px-3 py-1 text-sm">UI/UX Design</span>
+                    </div>
+                </div>
+            </a>
+            <a href="project-details.html?id=2" class="block">
+                <div class="card rounded-lg overflow-hidden cursor-pointer h-full">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1620233389768-4eafd182841a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="App Mobile Financeiro" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-white text-lg font-semibold mb-2">App Mobile Financeiro</h3>
+                        <p class="text-gray-400 mb-4">Aplicativo para gestão de finanças pessoais com interface intuitiva</p>
+                        <span class="inline-block bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full px-3 py-1 text-sm">Mobile</span>
+                    </div>
+                </div>
+            </a>
+            <a href="project-details.html?id=3" class="block">
+                <div class="card rounded-lg overflow-hidden cursor-pointer h-full">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1716788781066-7dbce308bbe0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Dashboard Analytics" class="w-full h-full object-cover">
+                        <div class="absolute top-3 right-3 bg-purple-600/90 backdrop-blur-sm rounded-full p-2">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-white text-lg font-semibold mb-2">Dashboard Analytics</h3>
+                        <p class="text-gray-400 mb-4">Painel de controle com visualização de dados em tempo real</p>
+                        <span class="inline-block bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full px-3 py-1 text-sm">Web Development</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-black/20 backdrop-blur-lg mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <p class="text-center text-gray-400 text-sm">
+                © 2026 GBeX. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
